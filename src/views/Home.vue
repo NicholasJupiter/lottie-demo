@@ -5,9 +5,8 @@
     <button @click="pause">pause</button>
     <button @click="stop">stop</button>
     <button @click="playSegments">playSegments</button>
-    <div>
-      <input type="text" v-model="localHref" />
-    </div>
+    <button @click="goToAndStop">goToAndStop</button>
+    <button @click="goToAndPlay">goToAndPlay</button>
   </div>
 </template>
 
@@ -32,8 +31,11 @@ export default {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      name: 'NicholasJupiter',
+      name: 'voice',
       animationData: data,
+    });
+    this.animationLottie.addEventListener('enterFrame', (res) => {
+      console.log(res);
     });
   },
   watch: {
@@ -54,6 +56,12 @@ export default {
     // 跳帧
     playSegments() {
       this.animationLottie.playSegments([[15, 20]], true);
+    },
+    goToAndStop() {
+      this.animationLottie.goToAndStop(80, true); // true = time  false = frame
+    },
+    goToAndPlay() {
+      this.animationLottie.goToAndPlay(20, true); // true = time  false = frame
     },
   },
 };
