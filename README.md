@@ -1,6 +1,8 @@
 # 如何使用
 [Lottie DOC-Web官网](https://airbnb.io/lottie/#/web)
+
 [Lottie预览JSON动效地址](https://lottiefiles.com/preview)
+
 ## 如何安装
 ```javascript
 // 1.使用npm安装
@@ -22,15 +24,18 @@ const animation = lottie.loadAnimation({
   animationData:{}
 })
 ```
-`container`：用来渲染的dom元素。
-`path`：AE或者Lottie导出的JSON文件路径。
-`renderer`：`svg`|`canvas`|`html`可以渲染成三种状态
-`loop`：`true`|`false`是否循环动画。 `true`->`animation-iteration-count:infinite;`。
-`autoplay`：`true`|`false`是否自动播放。
-`name`：动画名称。
-`animationData`：JSON数据 `path`和`animationData`二选一即可。
+
+- `container`：用来渲染的dom元素。
+- `path`：AE或者Lottie导出的JSON文件路径。
+- `renderer`：`svg`|`canvas`|`html`可以渲染成三种状态
+- `loop`：`true`|`false`是否循环动画。 `true`->`animation-iteration-count:infinite;`。
+- `autoplay`：`true`|`false`是否自动播放。
+- `name`：动画名称。
+- `animationData`：JSON数据 `path`和`animationData`二选一即可。
+
 ## 实例方法
-[示例图片](code.png)
+![示例图片](./code.png)
+
 - `play()`：启动
 - `stop()`：停止
 - `pause()`：暂停
@@ -64,6 +69,7 @@ const animation = lottie.loadAnimation({
 -   `loaded_images`：当所有图片加载成功/失败时触发
 -   `DOMLoaded`: 动画相关的dom已经被添加到html后触发
 -   `destroy`: 将在动画删除时触发
+
 ```javascript
 // animation 是一个实例对象通过lottie.loadAnimation
 animation.addEventlistener('data_ready',res=>{
