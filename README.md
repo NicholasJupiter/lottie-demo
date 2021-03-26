@@ -30,7 +30,7 @@ const animation = lottie.loadAnimation({
 `name`：动画名称。
 `animationData`：JSON数据 `path`和`animationData`二选一即可。
 ## 实例方法
-![[code.png]]
+[示例图片](code.png)
 - `play()`：启动
 - `stop()`：停止
 - `pause()`：暂停
